@@ -12,43 +12,56 @@
   rel="stylesheet"
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
   crossorigin="anonymous"
-/>
+  />
 
 
-<!-- FONT AWESOME -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-<!-- LINK CSS -->
-<link rel="stylesheet" href="style/style.css" />
+  <!-- LINK CSS -->
+  <link rel="stylesheet" href="style/style.css" />
 
-<!-- VUE JS -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+  <!-- VUE JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
 
-<!-- Axios -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
-<script src="js/script.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
 
-<!-- header -->
+<!--start  header -->
 <header>
     <img src="img/spotify-logo.png" alt="logo spotify">
 </header>
 
-<!-- hemainader -->
+<!-- start main -->
 <main>
 
     <div id="app">
-      
+        <div class="container pb-1 pt-1 d-flex justify-content-center">
+            <div class="row gap-2 w-75 m-auto">
+
+                <div v-for="(album,index) in albums" :key="index" class="col-12 col-md-3 col-xl-2">
+                    <div class="card-rf me-1">
+                      <img :src="album.poster" :alt="album.title" class="img-fluid pb-4">
+                      <h6>{{album.title}}</h6>
+                      <span>{{album.author}}</span>
+                      <span class="d-block">{{album.year}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 </main>
