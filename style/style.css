@@ -12,3 +12,25 @@ header img {
   width: 50px;
   margin: 10px 20px;
 }
+
+body {
+  background-color: hsl(209deg 33% 17%);
+}
+
+.card-rf {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: hsl(210deg 21% 23%);
+ 
+}
+
+.card-rf h6 {
+  text-transform: uppercase;
+  color: white;
+}
+
+.card-rf span {
+  color: hsl(33deg 5% 42%);
+  font-size: 12px;
+}
