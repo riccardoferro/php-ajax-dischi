@@ -1,6 +1,6 @@
 <?php
 
-$dischi = [
+$database = [
 
     [
       "author" => "Bon Jovi",
@@ -84,5 +84,38 @@ $dischi = [
 
 
 ];
+
+// if empty i return the entire database
+if (empty($_GET) || empty($_GET['search'])){
+
+  $dischi = $database;
+  
+}else {
+
+  // take the word to filter 
+  $word = $_GET['search'];
+
+  // modify word
+  $wordFilter = ucfirst(strtolower($word));
+
+  // declare an array empty
+  $result = [];
+
+  // here i check in the database if the word is ther
+  foreach($database as $album){
+    if (strpos($album['genre'], $wordFilter) !== false) {
+
+        // if so i insert the entire album in the empty array
+        $result[] = $album ;
+    }
+    // else {
+    //   echo("no results");
+    // }
+  }
+
+  // then i put the array no more empty in the other var
+  $dischi = $result;
+}
+
 
 ?>

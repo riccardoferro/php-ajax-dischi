@@ -1,3 +1,10 @@
+<?php
+
+include("data/dataDischi.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +45,19 @@
 </header>
 
 <!-- Start main where is the main content -->
-<main class="container pb-1 pt-1 d-flex justify-content-center">
+<main class="container pb-1 pt-1 d-flex justify-content-center flex-column">
+
+    <!-- here i insert the filter -->
+    <div class="row pt-3 pb-3 w-75 m-auto ">
+        <!-- metto nell'action questo stesso file perche' mandero' questi dati a questa stessa pagina per poi riutilizzarli -->
+        <form method="get" action="index2.php" class="col-auto">
+            <input type="text" placeholder="inserisci titolo da cercare:" name="search">
+            <input type="submit">
+        </form>
+
+    </div>
+
+
 
     <!-- row where are the albums -->
     <div class="row gap-2 w-75 m-auto">
@@ -46,7 +65,6 @@
           <!-- Here i insert the code PHP and include the datas -->
           <?php
 
-          include("data/dataDischi.php");
           // echo($dischi);
 
           foreach ($dischi as $album) {
