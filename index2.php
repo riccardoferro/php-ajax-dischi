@@ -37,29 +37,35 @@
     <img src="img/spotify-logo.png" alt="logo spotify">
 </header>
 
+<!-- Start main where is the main content -->
+<main class="container pb-1 pt-1 d-flex justify-content-center">
 
-<div class="container pb-1 pt-1 d-flex justify-content-center">
+    <!-- row where are the albums -->
     <div class="row gap-2 w-75 m-auto">
 
+          <!-- Here i insert the code PHP and include the datas -->
           <?php
+
           include("data/dataDischi.php");
           // echo($dischi);
 
           foreach ($dischi as $album) {
-              echo("<div class='card-rf me-1 col-12 col-md-3 col-xl-2'>");
           ?>
-          <img src="<?= $album['poster'] ?>" alt="<?= $album['title']?>" class="img-fluid pb-4">
-          <h6> <?= $album['title']?> </h6>
-          <span> <?= $album['author']?> </span>
-          <span class="d-block"> <?= $album['year']?> </span>
+
+              <!-- here i use the code HTML and code PHP inside to prinout the albums -->
+              <div class='card-rf me-1 col-12 col-md-3 col-xl-2'>
+                  <img src="<?= $album['poster'] ?>" alt="<?= $album['title']?>" class="img-fluid pb-4">
+                  <h6> <?= $album['title']?> </h6>
+                  <span> <?= $album['author']?> </span>
+                  <span class="d-block"> <?= $album['year']?> </span>
+              </div>
 
           <?php
-              echo("</div>");
           }
           ?>
+
     </div>
-</div>
 
+</main>
 </body>
-
 </html>
